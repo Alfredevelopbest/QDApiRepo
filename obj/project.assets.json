@@ -2557,11 +2557,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alfre\\OneDrive\\Documents\\QD API\\QD API.csproj",
+      "projectUniqueName": "C:\\Users\\alfre\\source\\repos\\QD API\\QD API.csproj",
       "projectName": "QD API",
-      "projectPath": "C:\\Users\\alfre\\OneDrive\\Documents\\QD API\\QD API.csproj",
+      "projectPath": "C:\\Users\\alfre\\source\\repos\\QD API\\QD API.csproj",
       "packagesPath": "C:\\Users\\alfre\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alfre\\OneDrive\\Documents\\QD API\\obj\\",
+      "outputPath": "C:\\Users\\alfre\\source\\repos\\QD API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\alfre\\AppData\\Roaming\\NuGet\\NuGet.Config",

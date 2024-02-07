@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("QD API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+15c66cef0d5bc19bc2590aad6ff9fbd7cb9311ee")]
 [assembly: System.Reflection.AssemblyProductAttribute("QD API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("QD API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
