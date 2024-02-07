@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QD_API.Validations;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -8,10 +9,10 @@ public partial class Customer
 {
     public long Id { get; set; }
     [Required]
-    [FirstCharacterUpper]
+    [FirstCharUpper]
     public string CustomerName { get; set; }
     [Required]
-    [FirstCharacterUpper]
+    [FirstCharUpper]
     public string CustomerLastname { get; set; }
     [Required]
     public short DocumentTypeId { get; set; }
