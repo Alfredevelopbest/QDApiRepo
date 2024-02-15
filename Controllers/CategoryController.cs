@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components.Forms;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.Json;
@@ -37,23 +38,39 @@ namespace QD_API.Controllers
         /// <summary>
         /// awaitable request to get category by Id
         /// </summary>
-        /// <param name="Id">Id</param>
-        /// <returns>Object in Json with category information</returns>
-        [HttpGet("getById{Id:int}")]
+        /// <param name="Id">Id</param> 
+        /// <returns>Object in Json with category list information</returns>
+        [HttpGet("getById{id:int}")]
 
-        public async Task<ActionResult<Category>> GetCategoryById(int Id)
+        public async Task<ActionResult<Category>> GetCategoryById(int id)
         {
-            return await context.category.FirstOrDefaultAsync(x => x.Id == Id);
+            var exist = await context.category.AnyAsync(x => x.Id == id);
+            if (!exist)
+            {
+                return NotFound($"La categoria '{id}' no existe");
+            }
+            
+            return await context.category.FirstOrDefaultAsync(x => x.Id == id);
         }
         /// <summary>
         /// awaitable request to get category by name
         /// </summary>
         /// <param name="name">name</param>
         /// <returns>Object in Json with category information</returns>
-       [HttpGet("getByName{name}")]
+       [HttpGet("getByName")]
 
         public async Task<ActionResult<Category>> GetCategoryByName(string name)
         {
+            var nameIsEmpty = string.IsNullOrEmpty(name);
+            if(nameIsEmpty)
+            {
+                return BadRequest("No ha escrito el nombre de la categoria que desea consultar");
+            }
+            var exist = await context.category.AnyAsync(x=> x.CategoryName == name);
+            if (!exist)
+            {
+                return NotFound($"La categoria '{name}' no existe, asegurese de escribir correctamente el nombre");
+            }
             return await context.category.FirstOrDefaultAsync(X => X.CategoryName.Contains(name));
         }
         /// <summary>
@@ -65,8 +82,8 @@ namespace QD_API.Controllers
         public async Task<ActionResult<Category>> CreateNewCategory(Category category) 
         {
             string name = category.CategoryName;
-            var isNull = string.IsNullOrEmpty(name);
-            if (isNull)
+            var emptyName = string.IsNullOrEmpty(name);
+            if (emptyName)
             {
                 return BadRequest("No ha escrito el nombre de la categoria");
             }
@@ -75,15 +92,21 @@ namespace QD_API.Controllers
             {
                 return BadRequest("La categoria ya existe");
             }
-            context.Add(category);            
+            
+            context.Add(category);             
             await context.SaveChangesAsync();
             return Ok();
         }
-
-        [HttpDelete("deleteCategoryById")]
-        public async Task<ActionResult<Category>> DeleteCategory(Category category)
+        /// <summary>
+        /// Awaitable method for delelete a category by Id
+        /// </summary>
+        /// <param name="category"></param>
+        /// <param name="id"></param>
+        /// <returns>esponse status 200 Ok</returns>
+        [HttpDelete("deleteCategoryById{id:int}")]
+        public async Task<ActionResult<Category>> DeleteCategory(Category category, int id)
         {
-           /* var existCategory = await EntityFrameworkQueryableExtensions.AnyAsync<Category>(context.category, x => x.Id == category.Id);
+            var existCategory = await EntityFrameworkQueryableExtensions.AnyAsync<Category>(context.category, x => x.Id == category.Id);
             if (!existCategory)
             {
                 return BadRequest("La categoria que intenta eliminar no existe");
@@ -91,14 +114,19 @@ namespace QD_API.Controllers
             if (category.Id != id)
             {
                 return BadRequest("El Id de la categoría no coincide con el Id de la URL");
-            }*/
+            }
             context.Remove(category);
             await context.SaveChangesAsync ();
-            return Ok();
+            return Ok("Categoria eliminada satisfactoriamente");
         }
-
+        /// <summary>
+        /// Awaitable method to update a category
+        /// </summary>
+        /// <param name="category"></param>
+        /// <param name="id"></param>
+        /// <returns>An updated category</returns>
         [HttpPut("{id:int}")]
-
+        
         public async Task<ActionResult> UpdateCategory(Category category, int id)
         {
             var existCategory = await EntityFrameworkQueryableExtensions.AnyAsync<Category>(context.category, X => X.Id == category.Id);

@@ -9,7 +9,7 @@ namespace QD_API.Validations
             string firstCharacter = value.ToString()[0].ToString();
             if (firstCharacter != firstCharacter.ToUpper())
             {
-                return new ValidationResult("La primera letra de cada {value} debe ser mayúscula");
+                return new ValidationResult($"Debe ingresar solo la primera letra de '{value}' en mayúscula");
             }
             return ValidationResult.Success;
         }
