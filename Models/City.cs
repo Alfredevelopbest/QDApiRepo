@@ -12,5 +12,11 @@ public partial class City
     [FirstCharUpper]
     public string CityName { get; set; }
 
+    public City(short Id, string CityName)
+    {
+        this.Id = Id;
+        this.CityName = CityName;
+    }
+
     public virtual ICollection<Customer> Customers { get; set; } = new List<Customer>();
 }

@@ -22,7 +22,7 @@ public partial class Customer
     public string TelephoneNumber { get; set; }
 
     public string Address { get; set; }
-    [Required]
+    //[Required]
     public string Email { get; set; }
     [Required]
     public short CityId { get; set; }

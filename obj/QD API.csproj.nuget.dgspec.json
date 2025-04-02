@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alfre\\source\\repos\\QD API\\QD API.csproj": {}
+    "C:\\Users\\alfre\\source\\repos\\QdApiBack\\QD API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alfre\\source\\repos\\QD API\\QD API.csproj": {
+    "C:\\Users\\alfre\\source\\repos\\QdApiBack\\QD API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alfre\\source\\repos\\QD API\\QD API.csproj",
+        "projectUniqueName": "C:\\Users\\alfre\\source\\repos\\QdApiBack\\QD API.csproj",
         "projectName": "QD API",
-        "projectPath": "C:\\Users\\alfre\\source\\repos\\QD API\\QD API.csproj",
+        "projectPath": "C:\\Users\\alfre\\source\\repos\\QdApiBack\\QD API.csproj",
         "packagesPath": "C:\\Users\\alfre\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alfre\\source\\repos\\QD API\\obj\\",
+        "outputPath": "C:\\Users\\alfre\\source\\repos\\QdApiBack\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alfre\\AppData\\Roaming\\NuGet\\NuGet.Config",
