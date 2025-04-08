@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("5b7128fe-9a00-4d6c-97c1-7d10fdede696")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("QD API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+80337b83cfdb71cc47ad9776e959c2aef4119904")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+12b8787e7c1d1bf488219235b5b8f04c8c45bbba")]
 [assembly: System.Reflection.AssemblyProductAttribute("QD API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("QD API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
