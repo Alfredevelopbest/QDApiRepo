@@ -2646,9 +2646,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alfre\\source\\repos\\QdApiBack\\QD API.csproj",
-      "projectName": "QD API",
-      "projectPath": "C:\\Users\\alfre\\source\\repos\\QdApiBack\\QD API.csproj",
+      "projectUniqueName": "C:\\Users\\alfre\\source\\repos\\QdApiBack\\QD_API.csproj",
+      "projectName": "QD_API",
+      "projectPath": "C:\\Users\\alfre\\source\\repos\\QdApiBack\\QD_API.csproj",
       "packagesPath": "C:\\Users\\alfre\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\alfre\\source\\repos\\QdApiBack\\obj\\",
       "projectStyle": "PackageReference",

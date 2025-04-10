@@ -1,6 +1,12 @@
 using QD_API;
 
-var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(args); 
+
+builder.Configuration.AddEnvironmentVariables();
+
+var connectionString = Environment.GetEnvironmentVariable("DefaultConnection");
+
+builder.Configuration["ConnectionStrings:DefaultConnection"] = connectionString;
 
 var startup = new StartUp(builder.Configuration);
 

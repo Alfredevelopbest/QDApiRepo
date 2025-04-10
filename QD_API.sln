@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QD API", "QD API.csproj", "{7DCCB842-3F37-455D-AA0E-56FE60943D44}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QD_API", "QD_API.csproj", "{7DCCB842-3F37-455D-AA0E-56FE60943D44}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
