@@ -9,7 +9,7 @@ public partial class DocumentType
 {
     public short Id { get; set; }
     [Required]
-    [FirstCharUpper]
+    [FirstCharacterUpperAttribute]
     public string DocumentName { get; set; }
 
     public virtual ICollection<Customer> Customers { get; set; } = new List<Customer>();

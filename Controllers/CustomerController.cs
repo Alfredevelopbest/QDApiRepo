@@ -10,11 +10,12 @@ namespace QD_API.Controllers
     public class CustomerController: ControllerBase
     {
         private readonly ApplicationDbContext context;
-
         public CustomerController(ApplicationDbContext context)
         {
             this.context = context;
         }
+
+        CustomerExistAttribute validation;
 
         [HttpGet("customerList")]
 
@@ -32,14 +33,9 @@ namespace QD_API.Controllers
             {
                 return BadRequest(ModelState);
             }
-            bool documentNumberExist = await context.customer.AnyAsync(c => c.DocumentNumber == customer.DocumentNumber);
-            if (documentNumberExist)
-            {
-                return BadRequest($"El documento {customer.DocumentNumber} ya ha sido registrado");
-            }
             context.Add(customer);
             await context.SaveChangesAsync();
-            return Ok();
+            return Ok(new {message = "Pronto te contactaremos"});
         }
 
         [HttpPut("put")]

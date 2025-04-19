@@ -9,14 +9,15 @@ public partial class Customer
 {
     public long Id { get; set; }
     [Required]
-    [FirstCharUpper]
+    [FirstCharacterUpperAttribute]
     public string CustomerName { get; set; }
     [Required]
-    [FirstCharUpper]
+    [FirstCharacterUpperAttribute]
     public string CustomerLastname { get; set; }
     [Required]
     public short DocumentTypeId { get; set; }
     [Required]
+    [CustomerExistAttribute]
     public string DocumentNumber { get; set; }
     [Required]
     public string TelephoneNumber { get; set; }

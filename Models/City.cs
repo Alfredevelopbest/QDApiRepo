@@ -9,7 +9,7 @@ public partial class City
 {
     public short Id { get; set; }
     [Required]
-    [FirstCharUpper]
+    [FirstCharacterUpperAttribute]
     public string CityName { get; set; }
 
     public City(short Id, string CityName)

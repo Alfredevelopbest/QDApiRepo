@@ -10,9 +10,9 @@ public partial class ProductImageReferenceGetList
     public long Id { get; set; }
 
     [Required]
-    [FirstCharUpper]
+    [FirstCharacterUpperAttribute]
     public string IdIdentifier { get; set; }
     [Required]
-    [FirstCharUpper]
+    [FirstCharacterUpperAttribute]
     public string ImageName { get; set; }
 }

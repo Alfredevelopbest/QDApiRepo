@@ -16,3 +16,4 @@ public class FirstCharToUpper : IValidations
         throw new NotImplementedException();
     }
 }
+
