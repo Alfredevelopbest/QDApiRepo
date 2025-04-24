@@ -19,7 +19,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: FrontConnection,
         policy =>
         {
-            policy.WithOrigins("http://localhost:5500")
+            policy.WithOrigins("https://alfredevelopbest.github.io/QDWebFront/")
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowAnyOrigin();
