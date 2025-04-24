@@ -19,7 +19,11 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: FrontConnection,
         policy =>
         {
+<<<<<<< HEAD
             policy.WithOrigins("https://alfredevelopbest.github.io/QDWebFront/")
+=======
+            policy.WithOrigins("http://localhost:5500", "https://alfredevelopbest.github.io")
+>>>>>>> d3ada43 (Feature: Cors policy added for development enviroment)
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowAnyOrigin();
