@@ -35,7 +35,7 @@ namespace QD_API.Controllers
             }
             context.Add(customer);
             await context.SaveChangesAsync();
-            return Ok(new {message = "Pronto te contactaremos"});
+            return Ok(new {message = "Pronto te contactará un agente QD"});
         }
 
         [HttpPut("put")]
