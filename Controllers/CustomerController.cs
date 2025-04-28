@@ -15,7 +15,6 @@ namespace QD_API.Controllers
             this.context = context;
         }
 
-        CustomerExistAttribute validation;
 
         [HttpGet("customerList")]
 
