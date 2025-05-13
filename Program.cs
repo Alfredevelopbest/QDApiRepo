@@ -19,7 +19,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: FrontConnection,
         policy =>
         {
-            policy.WithOrigins("http://localhost:5500")
+            policy.WithOrigins("http://localhost:5500","https://alfredevelopbest.github.io")
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowAnyOrigin();
@@ -28,8 +28,14 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
+app.UseHttpsRedirection();
+
 app.UseCors(FrontConnection);
+
+app.UseRouting();
+
+app.UseAuthorization();
 
 startup.Configure(app, app.Environment);
 
-app.Run(); 
+app.Run();
