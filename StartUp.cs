@@ -29,8 +29,6 @@ namespace QD_API
                 app.UseSwaggerUI();
             }
 
-            app.UseCors();
-
             app.UseHttpsRedirection();
           
             app.UseRouting();
