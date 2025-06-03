@@ -20,7 +20,6 @@ public partial class Product
 
     [Required]
     public string ProductName { get; set; }
-    [FirstCharacterUpperAttribute]
     [Required]
     public short SizeStandardId { get; set; }
 

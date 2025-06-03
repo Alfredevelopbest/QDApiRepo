@@ -32,6 +32,8 @@ namespace QD_API.Controllers
             {
                 return BadRequest(ModelState);
             }
+            customer.CustomerName = TextHelpers.CapitalizeWords(customer.CustomerName);
+            customer.CustomerLastname = TextHelpers.CapitalizeWords(customer.CustomerLastname);
             context.Add(customer);
             await context.SaveChangesAsync();
             return Ok(new {message = "Pronto te contactará un agente QD"});

@@ -1,17 +1,17 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Linq;
 
 namespace QD_API.Validations
 {
-    public class FirstCharacterUpperAttribute: ValidationAttribute
+    public static class TextHelpers
     {
-        protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
+        public static string CapitalizeWords(string text)
         {
-            string firstCharacter = value.ToString()[0].ToString();
-            if (firstCharacter != firstCharacter.ToUpper())
-            {
-                firstCharacter.ToUpper();
-            }
-            return ValidationResult.Success;
+            if (string.IsNullOrWhiteSpace(text)) return text;
+
+            var words = text.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+            return string.Join(' ', words.Select(word =>
+                char.ToUpper(word[0]) + word.Substring(1).ToLower()));
         }
     }
 }

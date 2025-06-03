@@ -13,7 +13,6 @@ public partial class StandardSize
     public decimal DimensionLenght { get; set; }
 
     [Required]
-    [FirstCharacterUpperAttribute]
     public string SizeName { get; set; }
 
     public virtual ICollection<Product> Products { get; set; } = new List<Product>();

@@ -9,10 +9,8 @@ public partial class Customer
 {
     public long Id { get; set; }
     [Required]
-    [FirstCharacterUpperAttribute]
     public string CustomerName { get; set; }
     [Required]
-    [FirstCharacterUpperAttribute]
     public string CustomerLastname { get; set; }
     [Required]
     public short DocumentTypeId { get; set; }
