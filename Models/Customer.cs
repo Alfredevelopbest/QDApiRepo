@@ -1,6 +1,7 @@
 ﻿using QD_API.Validations;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace QD_API.Models;
@@ -21,7 +22,7 @@ public partial class Customer
     public string TelephoneNumber { get; set; }
 
     public string Address { get; set; }
-    //[Required]
+    [Required]
     public string Email { get; set; }
     [Required]
     public short CityId { get; set; }
@@ -29,6 +30,8 @@ public partial class Customer
     public virtual City City { get; set; }
 
     public virtual DocumentType DocumentType { get; set; }
+
+    public DateTime CreatedAt { get; private set; }
 
     public virtual ICollection<SaleInvoice> SaleInvoices { get; set; } = new List<SaleInvoice>();
 }

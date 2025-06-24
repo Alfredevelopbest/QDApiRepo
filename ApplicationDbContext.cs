@@ -24,5 +24,13 @@ namespace QD_API
         public DbSet<DetailInvoice> detailInvoice { get; set; }
         public DbSet<SaleInvoice> saleInvoice { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Customer>()
+                .Property(c => c.CreatedAt)
+                .HasDefaultValueSql("CURRENT_TIMESTAMP");
+        }
+
     }
 }
